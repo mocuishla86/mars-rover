@@ -4,6 +4,7 @@ var rover = {
   direction: "North",
   x : 0,
   y : 0,
+  travelLog: [],
 }
 
 // ======================
@@ -99,15 +100,19 @@ function command(letter){
 
     if(letter[i] == "l"){
       turnLeft(rover);
+      rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
       
     } else if (letter[i] == "r"){
       turnRight(rover);
+      rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
       
     } else if (letter[i] == "f"){
       moveForward(rover);
+      rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
       
     } else if (letter[i] == "b"){
       moveBackward(rover);
+      rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
       
     } else {
       console.log("Rover doesn't understand your command!");
@@ -117,6 +122,7 @@ function command(letter){
 
 
 console.log(rover.direction);
+console.log(rover.travelLog);
 /*moveBackward(rover);
 turnLeft(rover);
 moveForward(rover);
