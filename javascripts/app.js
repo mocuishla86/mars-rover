@@ -56,7 +56,7 @@ function moveForward(rover){
     break;
 
     case "East":
-    rover.x = rover.x -1;
+    rover.x = rover.x + 1;
     break;
 
     case "South":
@@ -64,11 +64,31 @@ function moveForward(rover){
     break;
 
     case "West":
-    rover.x = rover.x + 1;
+    rover.x = rover.x - 1;
     break;
   }
 
   console.log("moveForward was called")
+}
+
+function moveBackward(rover){
+  switch (rover.direction){
+    case "North":
+    rover.y = rover.y - 1;
+    break;
+
+    case "East":
+    rover.x = rover.x -1;
+    break;
+
+    case "South":
+    rover.y = rover.y + 1;
+    break;
+
+    case "West":
+    rover.x = rover.x + 1;
+    break;
+  }
 }
 
 console.log(rover.direction);
