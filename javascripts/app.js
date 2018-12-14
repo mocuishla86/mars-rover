@@ -97,16 +97,16 @@ function command(letter){
   for (i = 0; i<letter.length; i++){
     var commands = letter[i];
 
-    if(letter == "l"){
+    if(letter[i] == "l"){
       turnLeft(rover);
       
-    } else if (letter == "r"){
+    } else if (letter[i] == "r"){
       turnRight(rover);
       
-    } else if (letter == "f"){
+    } else if (letter[i] == "f"){
       moveForward(rover);
       
-    } else if (letter == "b"){
+    } else if (letter[i] == "b"){
       moveBackward(rover);
       
     } else {
@@ -125,11 +125,5 @@ moveForward(rover);
 console.log(rover.direction);
 console.log(rover);*/
 
-command("g");
-command("l");
-command("f");
-command("f");
-command("f");
-command("b");
-
+command("lrfb");
 console.log(rover);
