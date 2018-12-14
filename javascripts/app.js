@@ -89,17 +89,47 @@ function moveBackward(rover){
     rover.x = rover.x + 1;
     break;
   }
+  console.log("moveBackward was called!");
+
 }
 
-console.log(rover.direction);
-moveForward(rover);
-console.log(rover.direction);
-turnLeft(rover);
-turnLeft(rover);
-console.log(rover.direction);
-moveForward(rover);
-console.log(rover.x);
-moveForward(rover);
-moveForward(rover);
-console.log(rover);
+function command(letter){
+  for (i = 0; i<letter.length; i++){
+    var commands = letter[i];
 
+    if(letter == "l"){
+      turnLeft(rover);
+      
+    } else if (letter == "r"){
+      turnRight(rover);
+      
+    } else if (letter == "f"){
+      moveForward(rover);
+      
+    } else if (letter == "b"){
+      moveBackward(rover);
+      
+    } else {
+      console.log("Rover doesn't understand your command!");
+    }
+  }
+}
+
+
+console.log(rover.direction);
+/*moveBackward(rover);
+turnLeft(rover);
+moveForward(rover);
+turnLeft(rover);
+moveForward(rover);
+console.log(rover.direction);
+console.log(rover);*/
+
+command("g");
+command("l");
+command("f");
+command("f");
+command("f");
+command("b");
+
+console.log(rover);
