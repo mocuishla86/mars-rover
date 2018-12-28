@@ -21,6 +21,18 @@ var land = [
   
   ]
 // ======================
+
+function tryToMove(newX, newY){
+  let iCanMove = checkPosition(newX, newY);
+  if (iCanMove){
+    rover.x = newX;
+    rover.y = newY;
+  }
+  else {
+    console.log("Try another movement");
+  }
+}
+
 function turnLeft(rover){
   switch(rover.direction){
     case "North":
@@ -64,21 +76,25 @@ function turnRight(rover){
 }
 
 function moveForward(rover){
+
+  let newX = rover.x;
+  let newY = rover.y;
+
   switch(rover.direction){
     case "North":
-    rover.y = rover.y + 1;
+    newY = rover.y - 1;
     break;
 
     case "East":
-    rover.x = rover.x + 1;
+    newX = rover.x + 1;
     break;
 
     case "South":
-    rover.y = rover.y - 1;
+    newY = rover.y + 1;
     break;
 
     case "West":
-    rover.x = rover.x - 1;
+    newX = rover.x - 1;
     break;
   }
 
