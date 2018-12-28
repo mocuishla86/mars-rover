@@ -21,6 +21,22 @@ var land = [
   
   ]
 // ======================
+function checkPosition(x, y){
+if (x < 0 || y < 0 || x > 9 || y > 9){
+  console.log("Out of boundaries")
+  return false;
+}
+
+let whatsThere = land[y][x];
+if (whatsThere === "rock" || whatsThere === "puddle"){
+  console.log("obstacle found!");
+  return false;
+}
+else {
+  return true;
+}
+
+}
 
 function tryToMove(newX, newY){
   let iCanMove = checkPosition(newX, newY);
@@ -123,25 +139,6 @@ function moveBackward(rover){
 
 }
 
-function stopRover(rover){
-
-  if(rover.x > 9){
-    console.log("Stop! Rover can't go further! Try another movement.");
-    rover.x = rover.x -1;}
-  if (rover.x < 0){
-    console.log("Stop! Rover can't go further! Try another movement.");
-    rover.x = rover.x + 1;
-  }
-  if(rover.y > 9){
-    console.log("Stop! Rover can't go further! Try another movement.");
-    rover.y = rover.y -1;
-  }
-  if(rover.y < 0){
-    console.log("Stop! Rover can't go further! Try another movement.");
-    rover.y = rover.y + 1;
-  }
-  
-}
 
 function command(letter){
   for (i = 0; i<letter.length; i++){
@@ -157,12 +154,12 @@ function command(letter){
     } else if (letter[i] == "f"){
       moveForward(rover);
       rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
-      stopRover(rover);
+      
       
     } else if (letter[i] == "b"){
       moveBackward(rover);
       rover.travelLog.push("x:" + rover.x + ", " + "y:" + rover.y);
-      stopRover(rover);
+      
       
     } else {
       console.log("Rover doesn't understand your command!");
