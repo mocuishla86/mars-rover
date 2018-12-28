@@ -179,13 +179,6 @@ function command(letter){
 
 console.log(rover.direction);
 console.log(rover.travelLog);
-/*moveBackward(rover);
-turnLeft(rover);
-moveForward(rover);
-turnLeft(rover);
-moveForward(rover);
-console.log(rover.direction);
-console.log(rover);*/
 
-command("bbbbbbbbbb");
+command("rfrflffrfflffffrflfrffffflfbrblbbrbbrbblbblbbrblbblbbbrbblbrblbb");
 console.log(rover);
