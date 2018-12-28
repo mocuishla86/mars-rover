@@ -99,7 +99,7 @@ function stopRover(rover){
   if(rover.x > 9){
     console.log("Stop! Rover can't go further! Try another movement.");
     rover.x = rover.x -1;}
-  if (rover.x < -9){
+  if (rover.x < 0){
     console.log("Stop! Rover can't go further! Try another movement.");
     rover.x = rover.x + 1;
   }
@@ -107,7 +107,7 @@ function stopRover(rover){
     console.log("Stop! Rover can't go further! Try another movement.");
     rover.y = rover.y -1;
   }
-  if(rover.y < -9){
+  if(rover.y < 0){
     console.log("Stop! Rover can't go further! Try another movement.");
     rover.y = rover.y + 1;
   }
