@@ -7,6 +7,19 @@ var rover = {
   travelLog: [],
 }
 
+var land = [
+  ["path", "path", "rock","path", "path","puddle","rock","path","path","rock"],
+  ["puddle", "path", "path","path", "path","path","rock","path","puddle","path"],
+  ["path", "rock", "rock","path", "rock","path","path","rock","path","path"],
+  ["path", "path", "path","path", "path","path","path","path","rock","path"],
+  ["path", "path", "rock","path", "path","rock","path","path","path","rock"],
+  ["rock", "path", "rock","path", "path","path","puddle","rock","path","path"],
+  ["path", "rock", "path","path", "path","rock","path","path","path","path"],
+  ["rock", "path", "path","rock", "rock","puddle","path","rock","path","path"],
+  ["path", "path", "rock","path", "path","rock","path","path","path","puddle"],
+  ["puddle", "path", "path","rock", "path","puddle","path","rock","path","path"],
+  
+  ]
 // ======================
 function turnLeft(rover){
   switch(rover.direction){
