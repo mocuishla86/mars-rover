@@ -1,11 +1,20 @@
 // Rover Object Goes Here
 // ======================
-var rover = {
+var rover1 = {
   direction: "North",
   x : 0,
   y : 0,
   travelLog: [],
 }
+
+var rover2 = {
+  direction: "North",
+  x : 0,
+  y : 2,
+  travelLog: [],
+}
+
+
 
 var land = [
   ["path", "path", "rock","path", "path","puddle","rock","path","path","rock"],
@@ -38,7 +47,7 @@ else {
 
 }
 
-function tryToMove(newX, newY){
+function tryToMove(newX, newY, rover){
   let iCanMove = checkPosition(newX, newY);
   if (iCanMove){
     rover.x = newX;
@@ -114,7 +123,7 @@ function moveForward(rover){
     break;
   }
 
-  tryToMove(newX, newY)
+  tryToMove(newX, newY, rover)
 
   console.log("moveForward was called")
 }
@@ -142,14 +151,14 @@ function moveBackward(rover){
     break;
   }
 
-tryToMove(newX, newY)
+tryToMove(newX, newY, rover)
 
   console.log("moveBackward was called!");
 
 }
 
 
-function command(letter){
+function command(letter, rover){
   for (i = 0; i<letter.length; i++){
 
     if(letter[i] == "l"){
@@ -177,8 +186,8 @@ function command(letter){
 }
 
 
-console.log(rover.direction);
-console.log(rover.travelLog);
 
-command("rfrflffrfflffffrflfrffffflfbrblbbrbbrbblbblbbrblbblbbbrbblbrblbb");
-console.log(rover);
+
+command("rfrflffrfflffffrflfrffffflfbrblbbrbbrbblbblbbrblbblbbbrbblbrblbb", rover1);
+console.log(rover1);
+console.log(rover2);
